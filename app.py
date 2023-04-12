@@ -73,15 +73,14 @@ img_str = img_str.decode('ascii')
 access_token={"LeP6vbyLZw4bf2vOH4fR"}
 ## Construct the URL to retrieve image.
 upload_url = ''.join([
-    'https://detect.roboflow.com/tmt-rods-counting/2?api_key=LeP6vbyLZw4bf2vOH4fR',
-    f'?access_token=["access_token"]',
+    'https://detect.roboflow.com/tmt-rods-counting/2,
+     f'?access_token=["access_token"]',
     '&format=image',
     f'&overlap={overlap_threshold * 100}',
     f'&confidence={confidence_threshold * 100}',
     '&stroke=2',
     '&labels=True'
 ])
-
 ## POST to the API.
 r = requests.post(upload_url,
                   data=img_str,
@@ -101,8 +100,8 @@ st.image(image,
 
 ## Construct the URL to retrieve JSON.
 upload_url = ''.join([
-    'https://detect.roboflow.com/tmt-rods-counting/2?api_key=LeP6vbyLZw4bf2vOH4fR',
-    f'?access_token=["access_token"]'
+    'https://detect.roboflow.com/tmt-rods-counting/2',
+    f'?access_token=["access_token"]''
 ])
 
 ## POST to the API.
